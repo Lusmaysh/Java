@@ -1,13 +1,11 @@
 package syamsul;
-
 import javax.swing.JOptionPane;
-
-public class SYAMSUL80 
+public class SYAMSUL85 
 {
     public static String hasil, laporan, ket, grade, ed="y",ded,info="",hd,dh;
     public static float sem_ipk = 0f, sem=0f, tot_ipk=0f, rata_nil=0f , rata_ipk=0f;
     public static int uji, x , ll =0 , tl=0 , z = 0, tot_nil=0,ned;
-    public static int no_data,hp;
+    public static int no_data,hp,hal,x1,x2,sisa,g;
     public static boolean putar=true, ptr = true;
     public static void main (String[] args)
     {
@@ -435,10 +433,108 @@ lapor="";
         lapor += " TIDAK LULUS     = "+tl +"\n";
         lapor += " ==================================================\n";
         JOptionPane.showMessageDialog(null,lapor,"LAPORAN HASIL EDIT MAHASISWA",JOptionPane.INFORMATION_MESSAGE);
-        
-     }
+        putar=true;
         }
-        while(!(x==-1));
-      
+        else
+        {
+            putar=false;
+        }
+        }
+        while(putar);
+        
+        sisa = (x+1)%3;
+        if(sisa == 0)
+        {
+            hal = (x+1)/3; //Rumus pada kelipatan 3
+        }
+        else
+        {
+            hal = (x+1)/3+1; //untuk rumus bukan kelipatan 3
+        }
+        
+        if(hal==1)
+        {
+            x1=1;x2=(x+1);
+        }
+        else
+        {
+            x1=1;x2=3;
+        }
+        System.out.println(" JUMLAH DATA     =  "+(x+1));
+        System.out.println(" JUMLAH HALAMAN  =  "+hal+"\n");
+        
+        z = 0; // no urut tabel
+        for(int h=1;h<=hal;h++) // h (halaman), hal (halaman terakhir) UTAMA
+        {
+            rata_nil=0;
+            tot_nil =0;
+            rata_ipk = 0;
+            tot_ipk = 0;
+            ll = 0;
+            tl = 0;
+            g = 0;
+            lapor="";
+            lapor += " HAL = "+h+"\n";
+            lapor += " LAPORAN HASIL PERHALAMAN "+h+" PENILAIAN MAHASISWA \n";
+            lapor += " ==================================================\n";
+            lapor += " NO    NAMA     NILAI    GRADE   IPK    KETERANGAN \n";
+            lapor += " ==================================================\n";
+            if(h == hal) // h adalah halaman yang bergerak, hal adalah halaman akhir
+            {
+                // halaman terakhir
+		JOptionPane.showMessageDialog(null,"DATA AKAN MASUK \nKE HALAMAN  =  "+h);
+                x2 = (x+1);
+            }
+            for(int t=x1; t<=x2; t++) // BERSARANG (t = user)
+            {
+                
+                z = z + 1;g++;
+                if (nilai[t-1] <=30)
+                {
+                    grade ="E";
+                }
+                else if ( nilai[t-1] <=59)
+                {
+                    grade = "D";
+                }
+                else if (nilai[t-1] <=70)
+                {
+                    grade ="C";
+                }
+                else if (nilai[t-1] <=80)
+                {
+                    grade ="B";
+                }
+                else
+                {
+                    grade ="A";
+                }
+
+                if (ipk[t-1] >=2.00)
+                {
+                    ket ="LULUS"; ll = ll + 1;
+                }
+                else
+                {
+                    ket = "TIDAK LULUS"; tl = tl + 1;
+                }
+                tot_nil = tot_nil + nilai[t-1];
+                tot_ipk = tot_ipk + ipk[t-1];
+                lapor += "  "+z+"     "+nama[t-1]+"     " +nilai[t-1]+"      "+grade+"     "+ipk[t-1]+"    "+ket+"\n";
+            }
+            rata_nil = tot_nil /g;
+            rata_ipk = tot_ipk /g;
+            lapor += " ==================================================\n";
+            lapor += " RATA RATA NILAI = "+rata_nil+" \n";
+            lapor += " RATA RATA IPK   = "+rata_ipk+" \n";
+            lapor += " LULUS           = "+ll +"\n";
+            lapor += " TIDAK LULUS     = "+tl +"\n";
+            lapor += " ==================================================\n";
+            JOptionPane.showMessageDialog(null,lapor,"LAPORAN HASIL EDIT MAHASISWA",JOptionPane.INFORMATION_MESSAGE);
+            
+            x1 += 3; // rumus umum
+            x2 += 3; // rumus yang dipakai hanya bukan pada halaman terakhir
+        }
+        JOptionPane.showMessageDialog(null,"DATA SELESAI \nSELURUHNYA");
     }
 }
