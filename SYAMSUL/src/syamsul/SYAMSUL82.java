@@ -37,97 +37,97 @@ public class SYAMSUL82 {
             }
         else
         {
-        do
-        {
-        x = x +1; no_data = no_data + 1;
-        String hasil ="";
-        String nm = JOptionPane.showInputDialog("NAMA MAHASISWA ");
-        nama[x] = nm;
-        do
-        {
-        try
-        {
-        do
+            do
             {
-        String nu = JOptionPane.showInputDialog("NILAI UJIAN (0-100) ");
-        uji = Integer.parseInt(nu);
-        lanjut = false;
-        }
-        while (!(uji >= 0 & uji <= 100));
-        }
-        catch (Exception e)
-        {
-        lanjut = true;
-        JOptionPane.showMessageDialog(null,"ERROR , DATA SALAH INPUT");
-        }
-        }
-        while (lanjut);
-        nilai[x] = uji;
-        if (uji <=30)
-        {
-        grade ="E";
-        }
-        else if ( uji <=59)
-        {
-        grade = "D";
-        }
-        else if (uji <=70)
-        {
-        grade ="C";
-        }
-        else if (uji <=80)
-        {
-        grade ="B";
-        }
-        else
-        {
-        grade ="A";
-        }
-        do
-        {
-        try
-        {
-        do
-        {
-        String sem = JOptionPane.showInputDialog("IPK SEMESTER [0-4.00] ");
-        sem_ipk = Float.parseFloat(sem);
-        lewat = false;
-        }
-        while (!(sem_ipk >= 0 & sem_ipk <= 4.00));
-        }
-        catch (Exception e)
-        {
-        lewat = true;
-        JOptionPane.showMessageDialog(null,"ERROR , DATA SALAH INPUT");
-        }
-        }
-        while (lewat);
-        ipk[x] = sem_ipk;
-        if (sem_ipk >=2.00)
-        {
-        ket ="LULUS";
-        }
-        else
-        {
-        ket = "TIDAK LULUS";
-        }
-        hasil += "NO : "+no_data+"\n";
-        hasil += " HASIL DATA MAHASISWA \n";
-        hasil += " NAMA = "+ nama[x]+"\n";
-        hasil += " NILAI = "+ nilai[x]+"\n";
-        hasil += " GRADE = "+ grade +"\n";
-        hasil += " IPK = "+ ipk[x]+" KET "+ket+"\n";
-        JOptionPane.showMessageDialog(null,hasil,"DATA MAHASISWA",JOptionPane.INFORMATION_MESSAGE);
-        do
-        {
-        lagi = JOptionPane.showInputDialog("INPUT DATA [Y/T] ");
-        if (x == 7)
-        {
-        JOptionPane.showMessageDialog(null,"DATA SUDAH PENUH");
-        lagi ="T";
-        }
-        }
-        while (!(("y".equals(lagi)) | ("Y".equals(lagi)) | ("t".equals(lagi)) | ("T".equals(lagi))));
+                x = x +1; no_data = no_data + 1;
+                String hasil ="";
+                String nm = JOptionPane.showInputDialog("NAMA MAHASISWA ");
+                nama[x] = nm;
+                do
+                {
+                    try
+                    {
+                        do
+                        {
+                            String nu = JOptionPane.showInputDialog("NILAI UJIAN (0-100) ");
+                            uji = Integer.parseInt(nu);
+                            lanjut = false;
+                        }
+                        while (!(uji >= 0 & uji <= 100));
+                    }
+                    catch (Exception e)
+                    {
+                        lanjut = true;
+                        JOptionPane.showMessageDialog(null,"ERROR , DATA SALAH INPUT");
+                    }
+                }
+                while (lanjut);
+                nilai[x] = uji;
+                if (uji <=30)
+                {
+                    grade ="E";
+                }
+                else if ( uji <=59)
+                {
+                    grade = "D";
+                }
+                else if (uji <=70)
+                {
+                    grade ="C";
+                }
+                else if (uji <=80)
+                {
+                    grade ="B";
+                }
+                else
+                {
+                    grade ="A";
+                }
+                do
+                {
+                try
+                {
+                do
+                {
+                String sem = JOptionPane.showInputDialog("IPK SEMESTER [0-4.00] ");
+                sem_ipk = Float.parseFloat(sem);
+                lewat = false;
+                }
+                while (!(sem_ipk >= 0 & sem_ipk <= 4.00));
+                }
+                catch (Exception e)
+                {
+                lewat = true;
+                JOptionPane.showMessageDialog(null,"ERROR , DATA SALAH INPUT");
+                }
+                }
+                while (lewat);
+                ipk[x] = sem_ipk;
+                if (sem_ipk >=2.00)
+                {
+                ket ="LULUS";
+                }
+                else
+                {
+                ket = "TIDAK LULUS";
+                }
+                hasil += "NO : "+no_data+"\n";
+                hasil += " HASIL DATA MAHASISWA \n";
+                hasil += " NAMA = "+ nama[x]+"\n";
+                hasil += " NILAI = "+ nilai[x]+"\n";
+                hasil += " GRADE = "+ grade +"\n";
+                hasil += " IPK = "+ ipk[x]+" KET "+ket+"\n";
+                JOptionPane.showMessageDialog(null,hasil,"DATA MAHASISWA",JOptionPane.INFORMATION_MESSAGE);
+                do
+                {
+                lagi = JOptionPane.showInputDialog("INPUT DATA [Y/T] ");
+                if (x == 7)
+                {
+                JOptionPane.showMessageDialog(null,"DATA SUDAH PENUH");
+                lagi ="T";
+                }
+            }
+            while (!(("y".equals(lagi)) | ("Y".equals(lagi)) | ("t".equals(lagi)) | ("T".equals(lagi))));
         }
         while (("y".equals(lagi)) | ("Y".equals(lagi)));
         }
@@ -135,9 +135,9 @@ public class SYAMSUL82 {
         }
         while (keluar);
         z = 0;
-        lapor += " LAPORAN HASIL PENILAIAN MAHAS \n";
+        lapor += "         LAPORAN HASIL PENILAIAN MAHAS \n";
         lapor += " ==================================================\n";
-        lapor += " NO NAMA NILAI GRADE IPK KETERANGAN \n";
+        lapor += "  NO   NAMA   NILAI   GRADE   IPK    KETERANGAN \n";
         lapor += " ==================================================\n";
         for (int y=0; y<=x; y=y+1)
         {
@@ -319,9 +319,9 @@ public class SYAMSUL82 {
         rata_ipk = 0;
         lapor="";
         z = 0;
-        lapor += " LAPORAN HASIL PENILAIAN MAHAS \n";
+        lapor += "         LAPORAN HASIL PENILAIAN MAHAS \n";
         lapor += " ==================================================\n";
-        lapor += " NO NAMA NILAI GRADE IPK KETERANGAN \n";
+        lapor += "  NO   NAMA   NILAI   GRADE   IPK    KETERANGAN \n";
         lapor += " ==================================================\n";
         for (int y=0; y<=x; y=y+1)
         {
@@ -446,9 +446,9 @@ public class SYAMSUL82 {
         rata_nil = 0;
         rata_ipk = 0;
         lapor1="";
-        lapor1 += " LAPORAN HASIL PENILAIAN MAHAS \n";
+        lapor1 += "         LAPORAN HASIL PENILAIAN MAHAS \n";
         lapor1 += " ==================================================\n";
-        lapor1 += " NO NAMA NILAI GRADE IPK KETERANGAN \n";
+        lapor1 += "  NO   NAMA   NILAI   GRADE   IPK    KETERANGAN \n";
         lapor1 += " ==================================================\n";
         for (int y=0; y<=x; y=y+1)
         {
@@ -483,7 +483,7 @@ public class SYAMSUL82 {
         }
         tot_nil = tot_nil + nilai[y];
         tot_ipk = tot_ipk + ipk[y];
-        lapor1 += " "+h+" "+nama[y]+" " +nilai[y]+" "+grade+" "+ipk[y]+" "+ket+"\n";
+        lapor1 += " "+h+"  "+nama[y]+"  " +nilai[y]+"  "+grade+"  "+ipk[y]+"  "+ket+"\n";
         }
         rata_nil = tot_nil /h;
         rata_ipk = tot_ipk / h;

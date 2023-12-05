@@ -140,7 +140,7 @@ public class SYAMSUL78 {
                 }
                 while(selesai);
                 
-                pil = JOptionPane.showInputDialog("DATA YANG AKAN DI EDIT[1-3]\n\n1. NAMA\n2. JENIS KELAMIN\n3. TINGGI BADAN\n4. BERAT BADAN\n");
+                pil = JOptionPane.showInputDialog("DATA YANG AKAN DI EDIT[1-4]\n\n1. NAMA\n2. JENIS KELAMIN\n3. TINGGI BADAN\n4. BERAT BADAN\n");
 
                 switch(pil){
                     case "1": 

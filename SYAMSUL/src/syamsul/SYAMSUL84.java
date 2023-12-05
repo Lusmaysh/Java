@@ -1,11 +1,9 @@
 package syamsul;
-import java.util.Scanner;
 public class SYAMSUL84 {
     public static void main(String[] args) 
     {
         int dt=0,hal=0,sisa=0,x1=0,x2=0;
-        
-        dt = 78;
+        dt = 8;
         sisa = dt%3;
         if(sisa == 0)
         {
@@ -43,7 +41,6 @@ public class SYAMSUL84 {
                 System.out.println("         "+t);
             }
             System.out.println("   ==============");
-            
             x1 += 3; // rumus umum
             x2 += 3; // rumus yang dipakai hanya bukan pada halaman terakhir
         }

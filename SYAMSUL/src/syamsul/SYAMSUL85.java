@@ -466,6 +466,7 @@ lapor="";
         z = 0; // no urut tabel
         for(int h=1;h<=hal;h++) // h (halaman), hal (halaman terakhir) UTAMA
         {
+            JOptionPane.showMessageDialog(null,"DATA AKAN MASUK \nKE HALAMAN  =  "+h);
             rata_nil=0;
             tot_nil =0;
             rata_ipk = 0;
@@ -482,12 +483,10 @@ lapor="";
             if(h == hal) // h adalah halaman yang bergerak, hal adalah halaman akhir
             {
                 // halaman terakhir
-		JOptionPane.showMessageDialog(null,"DATA AKAN MASUK \nKE HALAMAN  =  "+h);
                 x2 = (x+1);
             }
             for(int t=x1; t<=x2; t++) // BERSARANG (t = user)
             {
-                
                 z = z + 1;g++;
                 if (nilai[t-1] <=30)
                 {

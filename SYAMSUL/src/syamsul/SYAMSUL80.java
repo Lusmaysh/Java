@@ -340,7 +340,6 @@ lapor="";
    {
        try
        {
-         
          dh = JOptionPane.showInputDialog("DATA HAPUS [ 1 - "+(x+1)+" ]");
          hp= Integer.parseInt(dh);
          ptr = false;
@@ -435,10 +434,13 @@ lapor="";
         lapor += " TIDAK LULUS     = "+tl +"\n";
         lapor += " ==================================================\n";
         JOptionPane.showMessageDialog(null,lapor,"LAPORAN HASIL EDIT MAHASISWA",JOptionPane.INFORMATION_MESSAGE);
-        
-     }
+        putar=true;
         }
-        while(!(x==-1));
-      
+        else
+        {
+            putar=false;
+        }
+        }
+        while(putar);
     }
 }
