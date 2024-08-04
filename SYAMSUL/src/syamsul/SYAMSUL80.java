@@ -1,7 +1,5 @@
 package syamsul;
-
 import javax.swing.JOptionPane;
-
 public class SYAMSUL80 
 {
     public static String hasil, laporan, ket, grade, ed="y",ded,info="",hd,dh;

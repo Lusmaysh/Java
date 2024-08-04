@@ -1,8 +1,8 @@
-package syamsul; //11-
+package syamsul;
 import javax.swing.JOptionPane;
-public class SYAMSUL83 {
+public class SYAMSUL92 {
     private static String lagi="y",ket,nm,jk,tb,bb,info,ed,pil,hd,dh;
-    private static int x=-1,no_rekap=0,no_data=0,nr,hp=0;
+    private static int x=-1,no_rekap=0,no_data=0,nr,hp=0,sisa,hal,x1,x2;
     private static float ftb=0.0f,fbb=0.0f,tt=0.0f,gt=0.0f,ttb=0.0f,rt=0.0f,rb=0.0f;
     private static boolean putar=true,selesai,n_ruang;
     public static void main(String[] args) {
@@ -248,6 +248,7 @@ public class SYAMSUL83 {
             {
                 try
                 {
+
                   dh = JOptionPane.showInputDialog("DATA HAPUS [ 1 - "+(x+1)+" ]");
                   hp= Integer.parseInt(dh);
                   putar = false;
@@ -316,5 +317,55 @@ public class SYAMSUL83 {
         }
         }
         while(putar);
+        
+        sisa = (x+1)%3;
+        if(sisa == 0)
+        {
+            hal = (x+1)/3; //Rumus pada kelipatan 3
+        }
+        else
+        {
+            hal = (x+1)/3+1; //untuk rumus bukan kelipatan 3
+        }
+        
+        if(hal==1)
+        {
+            x1=1;x2=(x+1);
+        }
+        else
+        {
+            x1=1;x2=3;
+        }
+        for(int h=1;h<=hal;h++) // h (halaman), hal (halaman terakhir) UTAMA
+        {
+            JOptionPane.showMessageDialog(null,"DATA AKAN MASUK \nKE HALAMAN  =  "+h);
+            no_rekap=0;tt=0;ttb=0;rt=0;rb=0;
+            info="";
+            info+="                           REKAP DATA                   \n";
+            info+="---------------------------------------------------------------\n";
+            info+="     NO        NAMA        KELAMIN       TINGGI       BERAT    \n";
+            info+="---------------------------------------------------------------\n";
+            if(h == hal) // h adalah halaman yang bergerak, hal adalah halaman akhir
+            {
+                x2 = (x+1); // halaman terakhir
+            }
+            for(int y=x1;y<=x2;y++)
+                {
+                    no_rekap++;
+                    info+="  "+no_rekap+"    "+nama[y-1]+"    "+kelamin[y-1]+"    "+tinggi[y-1]+"    "+berat[y-1]+"\n";
+                    tt+=tinggi[y-1];
+                    ttb+=berat[y-1];
+                }
+            rt=tt/no_rekap;
+            rb=ttb/no_rekap;
+            info+="-------------------------------------------------\n";
+            info+="   RATA-RATA TINGGI           =  "+rt+"\n";
+            info+="   RATA-RATA BERAT BADAN      =  "+rb+"\n";
+            JOptionPane.showMessageDialog(null,info,"LAPORAN REKAP",JOptionPane.INFORMATION_MESSAGE);
+            
+            x1 += 3; // rumus umum
+            x2 += 3; // rumus yang dipakai hanya bukan pada halaman terakhir
+        }
+        JOptionPane.showMessageDialog(null,"DATA SELESAI \nSELURUHNYA");
     }
 }    
