@@ -17,3 +17,6 @@ public class SYAMSUL97 {
         System.out.println("JUMLAH PERKALIAN DARI ANGKA 2 DAN 5 ADALAH "+jumlah);
     }
 }
+
+    }
+}

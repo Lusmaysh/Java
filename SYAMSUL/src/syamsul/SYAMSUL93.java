@@ -26,3 +26,6 @@ public class SYAMSUL93 {
         bensin.solar();
     }
 }
+       bensin.solar();
+    }
+}

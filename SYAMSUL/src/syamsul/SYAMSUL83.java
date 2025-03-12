@@ -248,6 +248,7 @@ public class SYAMSUL83 {
             {
                 try
                 {
+
                   dh = JOptionPane.showInputDialog("DATA HAPUS [ 1 - "+(x+1)+" ]");
                   hp= Integer.parseInt(dh);
                   putar = false;
